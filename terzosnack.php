@@ -57,11 +57,15 @@ $posts = [
 <body>
     <?php 
     $keys =  array_keys($posts);
-    $postsLen = count($posts);
-    for ($i=0; $i < $postsLen; $i++) {
-        $post = $posts[$i];
-        var_dump($post);
+    for ($i=0; $i < count($posts); $i++) {
+        $post = $posts[$keys[$i]];
         echo "<div> {$keys[$i]} </div>";
+        for ($j=0; $j < count($post) ; $j++) { 
+            $page = $post[$j];
+            echo "<div> {$page['author']} <br> {$page['title']} </div> ";
+            echo "<img src={$page['url']} >";
+            echo "<div> {$page['text']} ";
+        }
     }
     ?>
 </body>
