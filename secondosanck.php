@@ -1,7 +1,7 @@
 <?php 
-$name = $_GET['name'];
-$age = $_GET['age'];
-$email = $_GET['email'];
+$name = isset($_GET['name']) ? $_GET['name'] : '' ;
+$age = isset($_GET['age']) ? $_GET['age'] : '' ;
+$email = $_GET['email'] ?? '';
 ?>
 
 
